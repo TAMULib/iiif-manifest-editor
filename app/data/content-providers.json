@@ -5,7 +5,7 @@
   "label": "IIIF Universe",
   "collections": [
     {
-      "@id": "http://10.55.148.148:32071/api/manifests",
+      "@id": "https://php.library.tamu.edu/manifests/index.json",
       "@type": "sc:Collection",
       "label": "TAMU Libraries",
       "logo": "tamu-logo.svg"
