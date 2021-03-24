@@ -224,12 +224,10 @@ var SettingsDialog = React.createClass({
     }
   },
   prefillRemoteJsonSettings: function() {
+	const { REACT_APP_ENDPOINT_NAME, REACT_APP_ENDPOINT_URI } = process.env; 
 	  
-	const ENDPOINT_NAME = process.env.ENDPOINT_NAME || 'JsonStorage.net';
-	const ENDPOINT_URI = process.env.ENDPOINT_URI || 'https://jsonstorage.net/api/items';	  
-	  
-	this.refs.serverEndpointName.value = ENDPOINT_NAME;
-	this.refs.serverEndpointUri.value = ENDPOINT_URI
+	this.refs.serverEndpointName.value = REACT_APP_ENDPOINT_NAME;
+	this.refs.serverEndpointUri.value = REACT_APP_ENDPOINT_URI
   },
   displayServerEndpointConfiguration: function() {
     if(this.state.savedServerEndpoint === '' ) {
@@ -243,7 +241,7 @@ var SettingsDialog = React.createClass({
             requests in order to retrieve, store and update manifests. Download and install&nbsp; 
             <a href="https://github.com/textandbytes/iiif-manifest-store" target="_blank">
             IIIF Manifest Store</a> or <a href="javascript:;" onClick={this.prefillRemoteJsonSettings}>
-            click here to use JsonStorage.net</a> to try this feature. Please note that your content on JsonStorage.net is publicly visible and the service might not be suitable for long-term storage of IIIF manifests.
+            click here to use TAMU Libraries storage</a>. Please note that your content is publicly visible and the service might not be suitable for long-term storage of IIIF manifests.
           </p>
           <br />
           <form>
