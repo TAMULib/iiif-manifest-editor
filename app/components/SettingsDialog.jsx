@@ -224,8 +224,12 @@ var SettingsDialog = React.createClass({
     }
   },
   prefillRemoteJsonSettings: function() {
-    this.refs.serverEndpointName.value = 'JsonStorage.net';
-    this.refs.serverEndpointUri.value = 'https://jsonstorage.net/api/items'
+	  
+	const ENDPOINT_NAME = process.env.ENDPOINT_NAME || 'JsonStorage.net';
+	const ENDPOINT_URI = process.env.ENDPOINT_URI || 'https://jsonstorage.net/api/items';	  
+	  
+	this.refs.serverEndpointName.value = ENDPOINT_NAME;
+	this.refs.serverEndpointUri.value = ENDPOINT_URI
   },
   displayServerEndpointConfiguration: function() {
     if(this.state.savedServerEndpoint === '' ) {
