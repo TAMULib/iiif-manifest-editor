@@ -224,10 +224,8 @@ var SettingsDialog = React.createClass({
     }
   },
   prefillRemoteJsonSettings: function() {
-	const { REACT_APP_ENDPOINT_NAME, REACT_APP_ENDPOINT_URI } = process.env; 
-	  
-	this.refs.serverEndpointName.value = REACT_APP_ENDPOINT_NAME;
-	this.refs.serverEndpointUri.value = REACT_APP_ENDPOINT_URI
+	this.refs.serverEndpointName.value = {{ENDPOINT_NAME}};
+	this.refs.serverEndpointUri.value = {{ENDPOINT_URI}}
   },
   displayServerEndpointConfiguration: function() {
     if(this.state.savedServerEndpoint === '' ) {
@@ -238,10 +236,8 @@ var SettingsDialog = React.createClass({
             Choose a name and indicate the URI. Click "Save Settings" to store your 
             settings to the browser's local storage. Before the endpoint settings are
             saved, the endpoint will be validated. It needs to support GET, POST and PUT
-            requests in order to retrieve, store and update manifests. Download and install&nbsp; 
-            <a href="https://github.com/textandbytes/iiif-manifest-store" target="_blank">
-            IIIF Manifest Store</a> or <a href="javascript:;" onClick={this.prefillRemoteJsonSettings}>
-            click here to use TAMU Libraries storage</a>. Please note that your content is publicly visible and the service might not be suitable for long-term storage of IIIF manifests.
+            requests in order to retrieve, store and update manifests. <a href="javascript:;" onClick={this.prefillRemoteJsonSettings}>
+            Click here to use TAMU Libraries storage</a>. Please note that your content is publicly visible and the service might not be suitable for long-term storage of IIIF manifests.
           </p>
           <br />
           <form>
