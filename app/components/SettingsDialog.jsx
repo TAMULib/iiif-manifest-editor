@@ -224,8 +224,8 @@ var SettingsDialog = React.createClass({
     }
   },
   prefillRemoteJsonSettings: function() {
-	this.refs.serverEndpointName.value = {{ENDPOINT_NAME}};
-	this.refs.serverEndpointUri.value = {{ENDPOINT_URI}}
+	this.refs.serverEndpointName.value = "{{ENDPOINT_NAME}}";
+	this.refs.serverEndpointUri.value = "{{ENDPOINT_URI}}"
   },
   displayServerEndpointConfiguration: function() {
     if(this.state.savedServerEndpoint === '' ) {
