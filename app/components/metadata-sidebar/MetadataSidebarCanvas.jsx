@@ -7,7 +7,7 @@ var MetadataSidebarCanvas = React.createClass({
   getMainImage: function(canvas) {
     return canvas !== null && canvas.getImages().length > 0 
       ? canvas.getCanonicalImageUri(100)
-      : '/img/empty-canvas.png';
+      : '/iiif-manifest-editor/img/empty-canvas.png';
   },
   render: function() {
     var canvas = this.props.manifestoObject.getSequenceByIndex(0).getCanvasById(this.props.canvasId);

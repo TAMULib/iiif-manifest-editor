@@ -13,7 +13,7 @@ var SourceManifestThumbnailStripCanvas = React.createClass({
   getMainImage: function(canvas) {
     return canvas.getImages().length > 0 
       ? canvas.getCanonicalImageUri(this.getThumbnailCanvasWidth(canvas)) 
-      : '/img/empty-canvas.png';
+      : '/iiif-manifest-editor/img/empty-canvas.png';
   },
   getMainImageLabel: function(canvas) {
     return canvas !== null ? Utils.getLocalizedPropertyValue(canvas.getLabel()) : 'Empty canvas';
